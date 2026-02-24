@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
-
-const hours = [
-  { day: "Monday – Friday", time: "7:00 – 20:00" },
-  { day: "Saturday", time: "8:00 – 21:00" },
-  { day: "Sunday", time: "8:00 – 18:00" },
-];
+import { MapPin, Clock, Phone, Globe } from "lucide-react";
 
 const Location = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -34,16 +28,16 @@ const Location = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Map placeholder */}
+          {/* Real Google Maps embed */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-lg overflow-hidden border border-border h-80 md:h-full min-h-[320px] bg-muted flex items-center justify-center"
+            className="rounded-lg overflow-hidden border border-border h-80 md:h-full min-h-[320px]"
           >
             <iframe
-              title="Trasimeno Coffee Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.123456789!2d12.1!3d43.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDA2JzAwLjAiTiAxMsKwMDYnMDAuMCJF!5e0!3m2!1sen!2sit!4v1234567890"
+              title="Trasimeno Coffee House Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.5!2d35.8585749!3d32.0278329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c9fa1baa070bd%3A0x634ac530bf3cc8a2!2sTrasimeno%20Coffee%20House!5e0!3m2!1sen!2sjo!4v1700000000000"
               className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
@@ -67,16 +61,14 @@ const Location = () => {
                 </h3>
               </div>
               <div className="space-y-2">
-                {hours.map((h) => (
-                  <div
-                    key={h.day}
-                    className="flex justify-between text-sm"
-                  >
-                    <span className="text-muted-foreground">{h.day}</span>
-                    <span className="font-medium text-foreground">{h.time}</span>
-                  </div>
-                ))}
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Every Day</span>
+                  <span className="font-medium text-accent">Open 24 Hours</span>
+                </div>
               </div>
+              <p className="text-xs text-muted-foreground mt-3">
+                Drive thru & walk-up window available around the clock
+              </p>
             </div>
 
             {/* Address */}
@@ -87,9 +79,20 @@ const Location = () => {
                   Address
                 </h3>
               </div>
-              <p className="text-muted-foreground text-sm">
-                Lake Trasimeno Area, Umbria, Italy
+              <p className="text-muted-foreground text-sm mb-2">
+                Amman, Jordan
               </p>
+              <p className="text-xs text-muted-foreground">
+                Plus Code: 2VH5+4C Amman
+              </p>
+              <a
+                href="https://maps.app.goo.gl/EST7UCyUva35FCnn9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 text-sm font-medium text-accent hover:text-accent/80 transition-colors"
+              >
+                Open in Google Maps →
+              </a>
             </div>
 
             {/* Contact */}
@@ -99,20 +102,40 @@ const Location = () => {
               </h3>
               <div className="space-y-2">
                 <a
-                  href="tel:+390000000000"
+                  href="tel:+96265868888"
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
                   <Phone size={16} />
-                  +39 000 000 0000
+                  +962 6 586 8888
                 </a>
                 <a
-                  href="mailto:info@trasimenocoffee.com"
+                  href="https://trasimenocoffee.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-accent transition-colors"
                 >
-                  <Mail size={16} />
-                  info@trasimenocoffee.com
+                  <Globe size={16} />
+                  trasimenocoffee.com
                 </a>
               </div>
+            </div>
+
+            {/* Rating */}
+            <div className="p-6 bg-background border border-border rounded-lg">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="font-serif text-2xl font-bold text-foreground">4.6</span>
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span
+                      key={star}
+                      className={`text-lg ${star <= 4 ? "text-accent" : "text-accent/40"}`}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground">Google Maps Rating</p>
             </div>
           </motion.div>
         </div>

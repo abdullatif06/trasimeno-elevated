@@ -11,15 +11,14 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
+      {/* Background - Real Trasimeno Coffee storefront */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: "url('/images/storefront.jpg')",
         }}
       />
-      <div className="absolute inset-0 bg-coffee-dark/60" />
+      <div className="absolute inset-0 bg-coffee-dark/65" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -27,16 +26,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm tracking-[0.3em] uppercase text-primary-foreground/70 mb-6 font-sans"
+          className="text-sm tracking-[0.3em] uppercase text-white/70 mb-6 font-sans"
         >
-          Est. 2020 — Trasimeno Coffee
+          Amman, Jordan — Open 24 Hours
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.1] mb-6"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-6"
         >
           Great Food
           <br />
@@ -47,25 +46,35 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-xl mx-auto font-light"
+          className="text-lg md:text-xl text-white/80 mb-10 max-w-xl mx-auto font-light"
         >
-          A warm and inviting space where quality meets comfort.
-          Exceptional drinks, fresh food, and unforgettable moments.
+          Kickstart your morning with us! Quality coffee, fresh food,
+          and a warm atmosphere — drive thru & walk-up window available.
         </motion.p>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          onClick={() =>
-            document
-              .querySelector("#menu")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-          className="px-8 py-3 bg-accent text-accent-foreground font-medium text-sm tracking-wide rounded-none hover:bg-accent/90 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5"
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          EXPLORE OUR MENU
-        </motion.button>
+          <button
+            onClick={() =>
+              document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="px-8 py-3 bg-accent text-accent-foreground font-medium text-sm tracking-wide rounded-none hover:bg-accent/90 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5"
+          >
+            EXPLORE OUR MENU
+          </button>
+          <a
+            href="https://maps.app.goo.gl/EST7UCyUva35FCnn9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 border border-white/30 text-white font-medium text-sm tracking-wide rounded-none hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            GET DIRECTIONS
+          </a>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -74,7 +83,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
         onClick={handleScroll}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white/80 transition-colors"
         aria-label="Scroll down"
       >
         <ChevronDown size={28} className="animate-scroll-hint" />

@@ -6,36 +6,48 @@ type MenuItem = { name: string; description: string; price: string };
 
 const menuData: Record<string, MenuItem[]> = {
   "Hot Drinks": [
-    { name: "Espresso", description: "Rich and bold single shot", price: "€2.50" },
-    { name: "Cappuccino", description: "Espresso with steamed milk foam", price: "€3.50" },
-    { name: "Flat White", description: "Double shot with velvety microfoam", price: "€3.80" },
-    { name: "Latte", description: "Smooth espresso with steamed milk", price: "€3.50" },
-    { name: "Hot Chocolate", description: "Rich Belgian chocolate blend", price: "€3.80" },
-    { name: "Chai Latte", description: "Spiced tea with steamed milk", price: "€3.80" },
+    { name: "Espresso", description: "Rich and bold single shot", price: "2.00 JOD" },
+    { name: "Double Espresso", description: "Intense double shot", price: "2.50 JOD" },
+    { name: "Cappuccino", description: "Espresso with steamed milk foam", price: "3.00 JOD" },
+    { name: "Caffè Latte", description: "Smooth espresso with steamed milk", price: "3.25 JOD" },
+    { name: "Flat White", description: "Double shot with velvety microfoam", price: "3.25 JOD" },
+    { name: "Hot Chocolate", description: "Rich chocolate with steamed milk", price: "3.00 JOD" },
+    { name: "Turkish Coffee", description: "Traditional fine-ground coffee", price: "2.00 JOD" },
+    { name: "Chai Latte", description: "Spiced tea with steamed milk", price: "3.00 JOD" },
+    { name: "Americano", description: "Espresso with hot water", price: "2.50 JOD" },
   ],
   "Iced Drinks": [
-    { name: "Iced Americano", description: "Chilled espresso over ice", price: "€3.50" },
-    { name: "Iced Latte", description: "Cold milk with espresso", price: "€4.00" },
-    { name: "Cold Brew", description: "Slow-steeped for 18 hours", price: "€4.00" },
-    { name: "Iced Matcha", description: "Japanese matcha over ice", price: "€4.50" },
-    { name: "Frappe", description: "Blended iced coffee drink", price: "€4.50" },
-    { name: "Fresh Lemonade", description: "House-made with mint", price: "€3.50" },
+    { name: "Iced Americano", description: "Chilled espresso over ice", price: "3.00 JOD" },
+    { name: "Iced Latte", description: "Cold milk with espresso over ice", price: "3.50 JOD" },
+    { name: "Iced Mocha", description: "Chocolate, espresso, and cold milk", price: "3.75 JOD" },
+    { name: "Cold Brew", description: "Slow-steeped for smooth flavor", price: "3.50 JOD" },
+    { name: "Iced Matcha Latte", description: "Japanese matcha over ice", price: "4.00 JOD" },
+    { name: "Frappe", description: "Blended iced coffee drink", price: "4.00 JOD" },
+    { name: "Fresh Lemonade", description: "House-made with fresh lemons", price: "3.00 JOD" },
+    { name: "Iced Chai", description: "Spiced chai tea over ice", price: "3.50 JOD" },
+    { name: "Mango Smoothie", description: "Fresh mango blended smooth", price: "4.00 JOD" },
   ],
   Food: [
-    { name: "Avocado Toast", description: "Sourdough, poached egg, chilli flakes", price: "€8.50" },
-    { name: "Açaí Bowl", description: "Topped with granola and fresh fruits", price: "€9.00" },
-    { name: "Club Sandwich", description: "Chicken, bacon, lettuce, tomato", price: "€9.50" },
-    { name: "Caesar Salad", description: "Romaine, parmesan, croutons", price: "€8.50" },
-    { name: "Pancakes", description: "Fluffy stack with maple syrup", price: "€7.50" },
-    { name: "Eggs Benedict", description: "Poached eggs with hollandaise", price: "€9.00" },
+    { name: "Club Sandwich", description: "Chicken, lettuce, tomato, mayo", price: "5.50 JOD" },
+    { name: "Chicken Wrap", description: "Grilled chicken with fresh veggies", price: "4.50 JOD" },
+    { name: "Beef Burger", description: "Juicy beef patty with toppings", price: "6.00 JOD" },
+    { name: "Caesar Salad", description: "Romaine, parmesan, croutons", price: "4.50 JOD" },
+    { name: "Eggs Benedict", description: "Poached eggs with hollandaise", price: "5.00 JOD" },
+    { name: "Pancakes", description: "Fluffy stack with maple syrup", price: "4.00 JOD" },
+    { name: "Avocado Toast", description: "Sourdough with avocado spread", price: "4.50 JOD" },
+    { name: "French Fries", description: "Crispy golden fries", price: "2.50 JOD" },
+    { name: "Manakeesh", description: "Traditional flatbread with za'atar", price: "2.00 JOD" },
   ],
   Desserts: [
-    { name: "Tiramisu", description: "Classic Italian coffee dessert", price: "€5.50" },
-    { name: "Carrot Cake", description: "Moist cake with cream cheese frosting", price: "€5.00" },
-    { name: "Chocolate Brownie", description: "Warm with vanilla ice cream", price: "€5.50" },
-    { name: "Cheesecake", description: "New York style, berry compote", price: "€5.50" },
-    { name: "Croissant", description: "Freshly baked butter croissant", price: "€3.00" },
-    { name: "Affogato", description: "Vanilla gelato drowned in espresso", price: "€4.50" },
+    { name: "Cheesecake", description: "Creamy New York style", price: "4.00 JOD" },
+    { name: "Chocolate Brownie", description: "Warm with chocolate sauce", price: "3.50 JOD" },
+    { name: "Tiramisu", description: "Classic Italian coffee dessert", price: "4.00 JOD" },
+    { name: "Croissant", description: "Freshly baked butter croissant", price: "2.00 JOD" },
+    { name: "Chocolate Croissant", description: "Filled with rich chocolate", price: "2.50 JOD" },
+    { name: "Carrot Cake", description: "Moist with cream cheese frosting", price: "3.50 JOD" },
+    { name: "Cookie", description: "Freshly baked chocolate chip", price: "1.50 JOD" },
+    { name: "Muffin", description: "Blueberry or chocolate chip", price: "2.00 JOD" },
+    { name: "Waffle", description: "Belgian waffle with toppings", price: "4.50 JOD" },
   ],
 };
 
@@ -129,7 +141,7 @@ const MenuSection = () => {
           className="text-center mt-12"
         >
           <a
-            href="https://trasimenocoffee.com"
+            href="https://linktr.ee/trasimenocoffee"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-sm font-medium text-accent hover:text-accent/80 transition-colors border-b border-accent/30 hover:border-accent pb-0.5"

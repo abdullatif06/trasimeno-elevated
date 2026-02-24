@@ -41,7 +41,9 @@ const Navbar = () => {
             e.preventDefault();
             handleClick("#home");
           }}
-          className="font-serif text-2xl font-bold tracking-tight text-foreground"
+          className={`font-serif text-2xl font-bold tracking-tight transition-colors duration-500 ${
+            scrolled ? "text-foreground" : "text-white"
+          }`}
         >
           Trasimeno<span className="text-accent">.</span>
         </a>
@@ -56,7 +58,11 @@ const Navbar = () => {
                   e.preventDefault();
                   handleClick(link.href);
                 }}
-                className="text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                className={`text-sm font-medium tracking-wide transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
+                  scrolled
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-white/70 hover:text-white"
+                }`}
               >
                 {link.label}
               </a>
@@ -66,7 +72,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={`md:hidden transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
