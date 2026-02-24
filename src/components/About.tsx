@@ -5,21 +5,21 @@ import { Coffee, Heart, Utensils } from "lucide-react";
 const features = [
   {
     icon: Coffee,
-    title: "Quality Coffee",
+    title: "Dedicated to Quality",
     description:
-      "Carefully selected beans, expertly roasted and brewed to perfection for every cup.",
+      "We pride ourselves on providing organic, fair trade tea and coffee. We work with local dairy suppliers and bakeries to source the freshest, highest quality offerings.",
   },
   {
     icon: Heart,
-    title: "Warm Atmosphere",
+    title: "Stay Awhile",
     description:
-      "A welcoming space designed for connection, relaxation, and making memories.",
+      "Comfortable seating inside our cafe with free wifi and plenty of outlets! Our drive thru and walk-up window make it easy to grab your favorites on the go.",
   },
   {
     icon: Utensils,
     title: "More Than Drinks",
     description:
-      "Fresh food, homemade pastries, and a menu crafted with care and passion.",
+      "We offer a wide variety of hot and iced drinks, plus savory and sweet food options. Whether it's morning coffee, lunch, or an afternoon snack — we've got you covered!",
   },
 ];
 
@@ -37,7 +37,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="text-sm tracking-[0.25em] uppercase text-accent font-medium mb-4"
           >
-            Our Story
+            About Us
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-5xl font-bold text-foreground mb-6"
           >
-            A Place to Belong
+            Trasimeno Coffee House
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -53,9 +53,10 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            At Trasimeno Coffee, we believe in creating more than just a coffee shop.
-            We're building a community space where every visit feels like coming home.
-            Great coffee, real food, and genuine connections — that's our promise.
+            Located in the heart of Amman, Jordan, Trasimeno Coffee House is your
+            neighborhood spot for great food and strong coffee. Open 24 hours,
+            we're here whenever you need us — with drive thru convenience and
+            a welcoming atmosphere that feels like home.
           </motion.p>
         </div>
 

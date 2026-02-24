@@ -1,7 +1,19 @@
-import { Instagram, Facebook, ArrowUp } from "lucide-react";
+import { useState } from "react";
+import { Instagram, Facebook, ArrowUp, Send } from "lucide-react";
 
 const Footer = () => {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 4000);
+    }
+  };
 
   const navLinks = [
     { label: "Home", href: "#home" },
@@ -14,15 +26,15 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground py-16">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-bold mb-3">
               Trasimeno<span className="text-accent">.</span>
             </h3>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Great food & strong coffee in the heart of Umbria.
-              A warm space for connection and community.
+              Great food & strong coffee in the heart of Amman, Jordan.
+              Open 24 hours — drive thru & walk-up window.
             </p>
           </div>
 
@@ -42,6 +54,16 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://trasimenocoffee.com/terms-and-conditions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -50,7 +72,7 @@ const Footer = () => {
             <h4 className="font-semibold text-sm tracking-wide uppercase mb-4 text-primary-foreground/80">
               Follow Us
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-4">
               <a
                 href="https://www.instagram.com/trasimenocoffee/"
                 target="_blank"
@@ -70,6 +92,46 @@ const Footer = () => {
                 <Facebook size={18} />
               </a>
             </div>
+            <a
+              href="https://linktr.ee/trasimenocoffee"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary-foreground/50 hover:text-accent transition-colors"
+            >
+              All social links →
+            </a>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="font-semibold text-sm tracking-wide uppercase mb-4 text-primary-foreground/80">
+              Stay Updated
+            </h4>
+            <p className="text-primary-foreground/50 text-sm mb-4">
+              Subscribe to get the latest news, offers, and updates from Trasimeno Coffee.
+            </p>
+            <form onSubmit={handleSubscribe} className="flex gap-0">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email"
+                required
+                className="flex-1 px-4 py-2.5 bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-sm placeholder:text-primary-foreground/30 focus:outline-none focus:border-accent transition-colors rounded-none"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2.5 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
+                aria-label="Subscribe"
+              >
+                <Send size={16} />
+              </button>
+            </form>
+            {subscribed && (
+              <p className="text-accent text-xs mt-2 animate-fade-up">
+                ✓ Thank you for subscribing!
+              </p>
+            )}
           </div>
         </div>
 
@@ -77,13 +139,21 @@ const Footer = () => {
           <p className="text-xs text-primary-foreground/40">
             © {new Date().getFullYear()} Trasimeno Coffee. All rights reserved.
           </p>
-          <button
-            onClick={scrollTop}
-            className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground/40 hover:text-primary-foreground hover:border-primary-foreground/50 transition-all duration-300"
-            aria-label="Back to top"
-          >
-            <ArrowUp size={16} />
-          </button>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+96265868888"
+              className="text-xs text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors"
+            >
+              +962 6 586 8888
+            </a>
+            <button
+              onClick={scrollTop}
+              className="w-10 h-10 rounded-full border border-primary-foreground/20 flex items-center justify-center text-primary-foreground/40 hover:text-primary-foreground hover:border-primary-foreground/50 transition-all duration-300"
+              aria-label="Back to top"
+            >
+              <ArrowUp size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
